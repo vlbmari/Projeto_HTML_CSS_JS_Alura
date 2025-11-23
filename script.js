@@ -7,6 +7,7 @@
 let cardContainer = document.querySelector(".card-container");
 let categoriaAtiva = 'Todos'; 
 let dados = [];
+let sugestaoAtivaIndex = -1;
 
 // Elementos do Modal de Curva
 const curvaModalOverlay = document.getElementById('curva-modal-overlay');
@@ -213,6 +214,7 @@ async function inicializar() {
 
 
 function mostrarSugestoes() {
+    sugestaoAtivaIndex = -1; // Reseta o índice a cada nova busca
     const termoBusca = document.getElementById("campo-busca").value.toLowerCase();
     const sugestoesContainer = document.getElementById("sugestoes-container");
 
@@ -224,7 +226,7 @@ function mostrarSugestoes() {
 
     const sugestoesFiltradas = dados
         .filter(dado => 
-            dado.nome.toLowerCase().startsWith(termoBusca) &&
+            dado.nome.toLowerCase().includes(termoBusca) &&
             (categoriaAtiva === 'Todos' || dado.categoria === categoriaAtiva)
         )
         .slice(0, 5); 
@@ -271,19 +273,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const campoBusca = document.getElementById("campo-busca");
     if (campoBusca) {
         campoBusca.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Evita o comportamento padrão (ex: submeter formulário)
+            const sugestoesContainer = document.getElementById("sugestoes-container");
+            const sugestoes = sugestoesContainer.querySelectorAll('.sugestao-item');
+            if (sugestoes.length === 0) return;
 
-                const sugestoesContainer = document.getElementById("sugestoes-container");
-                const primeiraSugestao = sugestoesContainer.querySelector('.sugestao-item');
-
-                if (primeiraSugestao) {
-                    primeiraSugestao.click(); // Simula o clique na primeira sugestão
-                }
+            switch (event.key) {
+                case 'ArrowDown':
+                    event.preventDefault();
+                    sugestaoAtivaIndex = (sugestaoAtivaIndex + 1) % sugestoes.length;
+                    atualizarDestaqueSugestao(sugestoes);
+                    break;
+                case 'ArrowUp':
+                    event.preventDefault();
+                    sugestaoAtivaIndex = (sugestaoAtivaIndex - 1 + sugestoes.length) % sugestoes.length;
+                    atualizarDestaqueSugestao(sugestoes);
+                    break;
+                case 'Enter':
+                    event.preventDefault();
+                    if (sugestaoAtivaIndex > -1) {
+                        sugestoes[sugestaoAtivaIndex].click();
+                    } else {
+                        sugestoes[0].click(); // Comportamento padrão: clica no primeiro
+                    }
+                    break;
+                case 'Escape':
+                    sugestoesContainer.innerHTML = '';
+                    break;
             }
         });
     }
 });
+
+function atualizarDestaqueSugestao(sugestoes) {
+    sugestoes.forEach((sugestao, index) => {
+        if (index === sugestaoAtivaIndex) {
+            sugestao.classList.add('sugestao-ativa');
+            // Garante que o item ativo esteja visível na rolagem
+            sugestao.scrollIntoView({ block: 'nearest' });
+        } else {
+            sugestao.classList.remove('sugestao-ativa');
+        }
+    });
+}
 
 document.addEventListener('click', function(event) {
     const searchWrapper = document.querySelector('.search-wrapper');

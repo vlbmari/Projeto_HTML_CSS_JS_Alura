@@ -128,8 +128,22 @@ document.addEventListener('DOMContentLoaded', () => {
         input.placeholder = 'Digite o nome aqui...';
         
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && input.value.trim() !== '') {
-                handleTextInput(input.value.trim());
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Previne o comportamento padrão (ex: quebra de linha)
+
+                const suggestions = suggestionsBox.querySelectorAll('.suggestion-item');
+                const lastSuggestion = suggestions[suggestions.length - 1];
+
+                if (lastSuggestion) {
+                    // Se a última sugestão existir, simula um clique nela
+                    lastSuggestion.click();
+                } else {
+                    // Caso contrário, envia o texto que já está no input
+                    const text = input.value.trim();
+                    if (text !== '') {
+                        handleTextInput(text);
+                    }
+                }
             }
         });
 

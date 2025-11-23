@@ -363,6 +363,12 @@ div input:focus {
     color: var(--bg-color);
 }
 
+.sugestao-item.sugestao-ativa {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
 #botao-busca:active {
     transform: scale(0.98); 
 }
