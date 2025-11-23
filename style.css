@@ -28,6 +28,12 @@ html {
     box-sizing: border-box; 
 }
 
+html, body {
+
+    overflow-x: hidden; /* Corta qualquer coisa que vaze horizontalmente */
+    width: 100%;        /* Garante que o corpo ocupe exatamente 100% */
+}
+
 :root {
     --primary-color: #8ab4f8;
     --secondary-color: #e8eaed;
@@ -272,6 +278,8 @@ div input {
     width: 20rem;
     color: var(--secondary-color); 
     margin-right: .5rem; 
+
+    max-width: 20rem;     /* Mas não passa de 20rem */
 }
 
 div input::placeholder {
@@ -1170,4 +1178,50 @@ article a:hover::after {
     padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+}
+
+
+/* --- MOBILE E TABLET (Telas de 869px para BAIXO) --- */
+@media (max-width: 869px) {
+    header {
+        padding: 0.5rem 1rem; /* Reduz padding para ganhar espaço */
+        gap: 0.5rem;
+    }
+
+    .hamburger-btn {
+        display: flex !important; /* Força o botão a aparecer */
+        margin-left: auto; /* Empurra o botão para a ponta direita */
+        flex-shrink: 0; /* Impede que o botão seja esmagado */
+    }
+
+    /* Ajuste do container de busca para caber na tela */
+    .search-wrapper {
+        flex: 1; /* Ocupa todo o espaço disponível entre o logo e o hamburguer */
+        margin-right: 10px;
+    }
+
+    /* Ajuste forçado no input para telas desse tamanho */
+    div input {
+        width: 100%;
+        max-width: 100%; /* Libera o input para usar o espaço flexível */
+    }
+}
+
+@media (max-width: 869px) {
+    header h1 {
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+    }
+}
+
+/* --- AJUSTE EXTRA PARA CELULARES MUITO PEQUENOS (Abaixo de 480px) --- */
+@media (max-width: 480px) {
+    /* Se a tela for muito pequena, escondemos o Título para priorizar a Busca e o Menu */
+    header h1 {
+        display: none; 
+    }
+    
+    .header-content-left {
+        min-width: auto; /* Remove largura mínima que empurrava o layout */
+        display: none;   /* Opcional: Esconde o container do logo se necessário */
+    }
 }
