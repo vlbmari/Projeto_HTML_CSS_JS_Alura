@@ -267,6 +267,24 @@ function handleSearchInput() {
     filtrarErenderizar();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const campoBusca = document.getElementById("campo-busca");
+    if (campoBusca) {
+        campoBusca.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Evita o comportamento padrão (ex: submeter formulário)
+
+                const sugestoesContainer = document.getElementById("sugestoes-container");
+                const primeiraSugestao = sugestoesContainer.querySelector('.sugestao-item');
+
+                if (primeiraSugestao) {
+                    primeiraSugestao.click(); // Simula o clique na primeira sugestão
+                }
+            }
+        });
+    }
+});
+
 document.addEventListener('click', function(event) {
     const searchWrapper = document.querySelector('.search-wrapper');
     if (!searchWrapper.contains(event.target)) {

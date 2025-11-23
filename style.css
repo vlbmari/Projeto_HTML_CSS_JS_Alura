@@ -21,7 +21,7 @@ summary, time, mark, audio, video {
 
 html {
     scroll-behavior: smooth; 
-    scroll-padding-top: 100px; 
+    scroll-padding-top: 70px; 
 }
 
 * {

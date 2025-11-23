@@ -281,8 +281,8 @@
     "ano": 1959,
     "descricao": "A linguagem dos negócios. Projetada para ser legível como o inglês, ela processa silenciosamente trilhões de dólares em transações diárias em sistemas financeiros globais.",
     "curiosidade": "Estima-se que mais de 220 bilhões de linhas de código COBOL ainda estejam em uso hoje, principalmente em sistemas bancários e governamentais.",
-    "diferencial": "Sua robustez e confiabilidade para processamento de transações em lote a mantêm como a espinha dorsal de sistemas financeiros e de mainframe.",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cobol/cobol-original.svg",
+    "diferencial": "Sua robustez e confiabilidade para processamento de transações em lote a mantêm como a espinha dorsal de sistemas financeiros e de mainframe.",    
+    "logo_url": "https://www.svgrepo.com/show/373510/cobol.svg",
     "tags": [
       "Financeiro",
       "Mainframe",
@@ -766,8 +766,8 @@
     "ano": 2011,
     "descricao": "Uma plataforma de streaming de eventos distribuída que permite publicar, assinar, armazenar e processar fluxos de registros em tempo real.",
     "curiosidade": "Kafka foi originalmente desenvolvido no LinkedIn para lidar com um alto volume de dados de atividade do usuário.",
-    "diferencial": "É projetado para lidar com um volume massivo de mensagens em tempo real com alta taxa de transferência e baixa latência, sendo o padrão para streaming de dados.",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg",
+    "diferencial": "É projetado para lidar com um volume massivo de mensagens em tempo real com alta taxa de transferência e baixa latência, sendo o padrão para streaming de dados.",    
+    "logo_url": "https://www.svgrepo.com/show/305719/apachekafka.svg",
     "tags": [
       "Streaming de Dados",
       "Mensageria",
@@ -787,8 +787,8 @@
     "ano": 2014,
     "descricao": "Um serviço de computação serverless da Amazon Web Services (AWS) que executa código em resposta a eventos sem a necessidade de provisionar ou gerenciar servidores.",
     "curiosidade": "O modelo de pagamento do Lambda é baseado na duração da execução e na memória alocada, popularizando o conceito 'pague pelo uso'.",
-    "diferencial": "Abstrai completamente a necessidade de gerenciar servidores, permitindo que desenvolvedores foquem apenas no código da função (FaaS - Function as a Service).",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+    "diferencial": "Abstrai completamente a necessidade de gerenciar servidores, permitindo que desenvolvedores foquem apenas no código da função (FaaS - Function as a Service).",    
+    "logo_url": "https://i.ibb.co/tpdy3Yn8/Generated-Image-November-23-2025-4-23-PM.png",
     "tags": [
       "Cloud (Serverless)",
       "FaaS",
