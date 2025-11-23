@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c0a17"> <meta name="robots" content="index, follow"> <meta name="description" content="Guia interativo e visual sobre as principais linguagens de programação, frameworks e ferramentas do mercado de desenvolvimento.">
+    <meta name="author" content="Mariana Lourenço">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Guia Dev - Enciclopédia de Tecnologias">
+    <meta property="og:description" content="Explore e descubra a evolução, curvas de aprendizado e detalhes técnicos das tecnologias que movem o mundo.">
+    <meta property="og:image" content="https://www.svgrepo.com/show/507693/code.svg"> <title>Guia Dev | Tecnologias</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>‍💻</text></svg>">
+
+</head>
+
+</head>
+<body>
+    <div id="stars1" style="background-image: url('http://www.script-tutorials.com/demos/360/images/stars.png');" aria-hidden="true"></div>
+    <div id="stars2" style="background-image: url('http://www.script-tutorials.com/demos/360/images/twinkling.png'); animation-duration: 90s;" aria-hidden="true"></div>
+    <div id="stars3" style="background-image: url('http://www.script-tutorials.com/demos/360/images/clouds.png'); animation-duration: 120s; opacity: 0.3;" aria-hidden="true"></div>
+
+    <header>
+        <div class="header-content-left">
+            <h1 id="main-title">Guia Dev</h1>
+        </div>
+        
+        <div class="search-wrapper" role="search">
+            <label for="campo-busca" class="visually-hidden" style="display:none;">Buscar tecnologia</label>
+            <input type="text" id="campo-busca" oninput="handleSearchInput()" placeholder="Busque por uma tecnologia..." aria-label="Buscar por nome da tecnologia" autocomplete="off">
+            <button id="botao-busca" aria-label="Executar busca">Buscar</button>
+            
+            <button id="filter-toggle-btn" aria-label="Abrir filtros de categoria" aria-expanded="false" aria-controls="filter-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            </button>
+            
+            <div id="sugestoes-container" role="listbox"></div>
+            
+            <div id="filter-container" aria-label="Filtros por categoria">
+                </div>
+        </div>
+
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav id="mobile-nav" class="mobile-nav">
+            <a href="#linguagens" class="nav-link">Tecnologias</a>
+            <a href="#tipos-execucao" class="nav-link">Tipos de Execução</a>
+            <a href="#niveis-linguagens" class="nav-link">Níveis de Linguagem</a>
+            <a href="#social" class="nav-link">Conecte-se</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="apresentacao" class="hero-section" aria-label="Introdução ao Guia Dev">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">v1.0 Stable</span>
+                    <h2 class="hero-title"> Explore o Universo <br>
+                        das <span class="gradient-text">Tecnologias</span>
+                    </h2>
+                    <p class="hero-description">
+                        Uma enciclopédia interativa e performática para desenvolvedores. 
+                        Descubra a história, a sintaxe e o poder por trás do código que move o mundo.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#linguagens" class="btn-primary">Começar Jornada</a>
+                        <a href="https://github.com/vlbmari" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <i class="fab fa-github" aria-hidden="true"></i> Conhecer Dev
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="code-block-decoration">
+                        <pre><code>console.log("Hello, World!");</code></pre>
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+             <h2 id="linguagens" class="styleH2">Tecnologias</h2>
+             <div class="card-container" role="list">
+                </div>
+        </section>
+
+        <section>
+            <h2 id="tipos-execucao" class="styleH2">Entenda sobre tipos de execução:</h2>
+            <div class="curiosidades-container">
+                <div class="curiosidade-card">
+                    <h3>Compilada</h3>
+                    <p>O código é traduzido de uma só vez para a linguagem da máquina antes da execução.</p>
+                    <button class="details-btn" data-tipo="Compilada" aria-label="Ver detalhes sobre linguagens compiladas">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card">
+                    <h3>Interpretada</h3>
+                    <p>O código é lido e executado linha por linha em tempo real.</p>
+                    <button class="details-btn" data-tipo="Interpretada" aria-label="Ver detalhes sobre linguagens interpretadas">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card">
+                    <h3>Interpretada (JIT)</h3>
+                    <p>Começa interpretando e compila as partes mais usadas em tempo real para otimizar a velocidade.</p>
+                    <button class="details-btn" data-tipo="Interpretada (JIT)" aria-label="Ver detalhes sobre JIT">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card">
+                    <h3>Traduzida (Transpilada)</h3>
+                    <p>O código é convertido para outra linguagem de programação (ex: TypeScript para JavaScript).</p>
+                    <button class="details-btn" data-tipo="Traduzida (Transpilada)" aria-label="Ver detalhes sobre transpilação">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card">
+                    <h3>Compilada para bytecode</h3>
+                    <p>O código é compilado para um formato intermediário universal, específico da plataforma Java.</p>
+                    <button class="details-btn" data-tipo="Compilada para bytecode" aria-label="Ver detalhes sobre bytecode">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card">
+                    <h3>Compilada para IL</h3>
+                    <p>O código é compilado para a "Intermediate Language", formato universal do ecossistema .NET.</p>
+                    <button class="details-btn" data-tipo="Compilada para IL" aria-label="Ver detalhes sobre IL">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="niveis-linguagens" class="styleH2">Entenda sobre Níveis de Linguagens:</h2>
+            <div class="curiosidades-container">
+                <div class="curiosidade-card nivel-alto">
+                    <h3>Nível Alto</h3>
+                    <p>Mais próximas da linguagem humana, fáceis de aprender e usar, com forte abstração do hardware.</p>
+                    <button class="details-btn" data-nivel="Nível alto" aria-label="Detalhes nível alto">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card nivel-intermediario">
+                    <h3>Nível Intermediário</h3>
+                    <p>Uma ponte entre o alto e o baixo nível, permitindo manipulação de memória e acesso ao hardware.</p>
+                    <button class="details-btn" data-nivel="Nível intermediário" aria-label="Detalhes nível intermediário">Ver Detalhes</button>
+                </div>
+                <div class="curiosidade-card nivel-baixo">
+                    <h3>Nível Baixo</h3>
+                    <p>Muito próximas da linguagem da máquina, oferecendo controle máximo sobre o hardware, mas com alta complexidade.</p>
+                    <button class="details-btn" data-nivel="Nível baixo" aria-label="Detalhes nível baixo">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="curva-modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content modal-curva" role="dialog" aria-modal="true" aria-labelledby="curva-modal-title">
+            <button id="curva-modal-close" class="modal-close" aria-label="Fechar gráfico">&times;</button>
+            <h3 id="curva-modal-title"></h3>
+            <div id="curva-modal-body" class="grafico-wrapper-modal">
+                </div>
+            <p id="curva-modal-desc" class="curva-desc"></p>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close" class="modal-close" aria-label="Fechar modal">&times;</button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-advantage"></p>
+            <p id="modal-disadvantage"></p>
+        </div>
+    </div>
+
+    <footer id="social" class="footer">
+        <div class="footer-content">
+            
+            <div class="footer-section brand">
+                <h3>Guia Dev_</h3>
+                <p>Seu aliado estratégico na jornada dev. Aprenda, compare e defina sua próxima tecnologia de forma simples e intuitiva.</p>
+                <a href="#apresentacao" class="btn-lower">
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao início
+                </a>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Explorar</h3>
+                <ul>
+                    <li><a href="#linguagens">Linguagens</a></li>
+                    <li><a href="#tipos-execucao">Tipos de Execução</a></li>
+                    <li><a href="#niveis-linguagens">Níveis de Linguagens</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social">
+                <h3>Social</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/vlbmari" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vlbmari/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:slb.marianavitoria@gmail.com" aria-label="Enviar Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Brasil</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guia Dev. Desenvolvido com <i class="fas fa-heart beat-icon" aria-label="amor"></i> por <strong>Mariana Lourenço</strong>.</p>
+        </div>
+    </footer>
+
+    <div id="chat-container">
+        <div id="chat-bubble" aria-label="Abrir assistente virtual">🤖</div>
+        <div id="chat-window" class="hidden" role="dialog" aria-label="Janela do assistente virtual">
+            <div id="chat-header">Assistente Dev</div>
+            <div id="chat-messages" role="log" aria-live="polite"></div>
+            <div id="chat-input-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot-web.js"></script>
+</body>
+</html>
