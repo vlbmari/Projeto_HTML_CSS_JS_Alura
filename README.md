@@ -40,7 +40,7 @@ O código foi organizado de forma modular para facilitar a manutenção e a esca
 ├── data.json           # Base de dados local com as informações das tecnologias
 ├── chatbot-style.css   # Estilos isolados do componente de Chatbot
 └── chatbot-web.js      # Lógica de inteligência e interação do assistente virtual
-
+```
 ---
 
 ## 💙 Agradecimentos Especiais
